@@ -8,20 +8,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
     font-family:'Inter',sans-serif;
-    background:linear;
+    background:#0f172a;
     color:#f1f5f9;
     line-height:1.6;
 }
 
+/* ===== NAVBAR ===== */
 nav{
     position:sticky;
     top:0;
     background:linear-gradient(90deg,#0077b6,#00b4d8);
     padding:15px 0;
+    z-index:100;
 }
 
 .nav-container{
@@ -33,7 +39,10 @@ nav{
     align-items:center;
 }
 
-.brand{font-weight:700;font-size:1.2rem;}
+.brand{
+    font-weight:700;
+    font-size:1.3rem;
+}
 
 .nav-links{
     display:flex;
@@ -43,22 +52,14 @@ nav{
 .nav-links a{
     color:#f1f5f9;
     text-decoration:none;
+    font-weight:500;
 }
+
 .nav-links a:hover{
-    color:#94a3b8;
-}   
-
-.resume-btn{
-    padding:8px 14px;
-    border-radius:20px;
-    background:transparent;
-    color:white;
-}
-.resume-btn:hover{
-    background:linear-gradient(90deg,#00b4d8,#90e0ef);
-    color:#000000;
+    color:#000;
 }
 
+/* ===== HERO ===== */
 header{
     max-width:1100px;
     margin:auto;
@@ -71,8 +72,8 @@ header{
 .profile-img img{
     width:220px;
     height:220px;
-    object-fit:cover;
     border-radius:50%;
+    object-fit:cover;
     border:4px solid #00b4d8;
 }
 
@@ -85,18 +86,29 @@ header{
 
 .hero-content p{
     margin-top:15px;
-    color:#000000;
+    font-size:1.1rem;
+    color:#cbd5f5;
 }
 
+.resume-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    border-radius:25px;
+    background:linear-gradient(90deg,#00b4d8,#90e0ef);
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.resume-btn:hover{
+    opacity:0.9;
+}
+
+/* ===== SECTIONS ===== */
 section{
     padding:80px 20px;
 }
-
-#about{background:linear-gradient(90deg,#1e293b,#111827);}
-#projects{background:linear-gradient(180deg,#1e293b,#111827);}
-#education{background:linear-gradient(180deg,#111827,#1e293b);}
-#experience{background:linear-gradient(180deg,#1e293b,#0f172a);}
-#contact{background:linear-gradient(180deg,#0f172a,#111827);}
 
 .container{
     max-width:1100px;
@@ -106,32 +118,65 @@ section{
 section h2{
     font-size:2rem;
     margin-bottom:30px;
-    color:linear-gradient(90deg,#0077b6,#00b4d8);
+    background:linear-gradient(90deg,#0077b6,#00b4d8);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .card{
     background:linear-gradient(90deg,#0077b6,#00b4d8);
     padding:25px;
-    border-radius:12px;
-    margin-bottom:20px;
+    border-radius:15px;
+    margin-bottom:25px;
+    color:#000;
 }
 
 .card span{
-    color:#000000;
     font-size:0.9rem;
+    display:block;
+    margin-bottom:10px;
 }
 
+/* ===== PROJECTS ===== */
 .projects{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
 }
 
+/* ===== SKILLS ===== */
+#skills{
+    background:linear-gradient(180deg,#111827,#0f172a);
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.skill-card{
+    background:linear-gradient(90deg,#0077b6,#00b4d8);
+    padding:20px;
+    border-radius:15px;
+    color:#000;
+    transition:0.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-6px);
+}
+
+.skill-card h3{
+    margin-bottom:10px;
+}
+
+/* ===== FOOTER ===== */
 footer{
     text-align:center;
     padding:30px;
-    background:#0f172a;
-    color:#000000;
+    background:#020617;
+    color:#94a3b8;
 }
 
 /* ===== MOBILE ===== */
@@ -144,18 +189,23 @@ footer{
         width:180px;
         height:180px;
     }
+    .nav-links{
+        display:none;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- ===== NAV ===== -->
 <nav>
 <div class="nav-container">
     <div class="brand">Davis</div>
     <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
@@ -163,6 +213,7 @@ footer{
 </div>
 </nav>
 
+<!-- ===== HERO ===== -->
 <header>
     <div class="profile-img">
         <img src="profile.jpg" alt="Davis Gavril">
@@ -171,11 +222,13 @@ footer{
     <div class="hero-content">
         <h1>Davis Gavril T</h1>
         <p>B.Tech Information Technology Student | Aspiring Software Developer</p>
-        <a href="resume.pdf" download class="resume-btn">Resume</a>
+        <a href="resume.pdf" download class="resume-btn">Download Resume</a>
     </div>
 </header>
 
 <div class="container">
+
+<!-- ===== ABOUT ===== -->
 <section id="about">
 <h2>About Me</h2>
 <p>
@@ -185,6 +238,8 @@ web and mobile application development. Seeking entry-level software
 development opportunities to apply technical and analytical skills.
 </p>
 </section>
+
+<!-- ===== PROJECTS ===== -->
 <section id="projects">
 <h2>Projects</h2>
 
@@ -194,10 +249,9 @@ development opportunities to apply technical and analytical skills.
 <h3>DR. VENOM – Emergency SOS Web Application</h3>
 <span>HTML, CSS, Bootstrap, AngularJS, MySQL</span>
 <p>
-Developed a responsive emergency assistance web application.
-Implemented real-time SOS alerts with geolocation and emergency contact notifications.
-Integrated Google Maps API to display nearby hospitals.
-Designed admin panel to dynamically manage first-aid resources.
+Developed a responsive emergency assistance web application with real-time SOS alerts,
+geolocation tracking, and emergency contact notifications. Integrated Google Maps API
+and designed admin dashboard.
 </p>
 </div>
 
@@ -205,22 +259,61 @@ Designed admin panel to dynamically manage first-aid resources.
 <h3>To-Do List Mobile Application</h3>
 <span>Flutter, Dart, Firebase, SQLite</span>
 <p>
-Developed a cross-platform mobile application for task and time management.
-Implemented CRUD operations for tasks and projects.
-Designed responsive UI using Flutter Material Design.
-Integrated time tracking with date and notes.
+Built a cross-platform mobile application for task and time management with CRUD
+operations, responsive UI, and time tracking features.
 </p>
 </div>
 
 </div>
 </section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+<h2>Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>Programming Languages</h3>
+<p>Java, Python, C</p>
+</div>
+
+<div class="skill-card">
+<h3>Web Technologies</h3>
+<p>HTML, CSS, Bootstrap, AngularJS</p>
+</div>
+
+<div class="skill-card">
+<h3>Mobile Development</h3>
+<p>Flutter, Dart</p>
+</div>
+
+<div class="skill-card">
+<h3>Databases</h3>
+<p>MySQL, Firebase, SQLite</p>
+</div>
+
+<div class="skill-card">
+<h3>Core Concepts</h3>
+<p>DSA, OOPS, DBMS, Computer Networks</p>
+</div>
+
+<div class="skill-card">
+<h3>Tools</h3>
+<p>Git, GitHub, VS Code, Android Studio</p>
+</div>
+
+</div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
 <section id="education">
 <h2>Education</h2>
 
 <div class="card">
-<h3>Bachelor of Technology – Information Technology</h3>
+<h3>B.Tech – Information Technology</h3>
 <span>K.S. Rangasamy College of Technology (2023 – 2027)</span>
-<p>CGPA: 7.91/10</p>
+<p>CGPA: 7.91 / 10</p>
 </div>
 
 <div class="card">
@@ -228,7 +321,10 @@ Integrated time tracking with date and notes.
 <span>KSR Matriculation Higher Secondary School (2022 – 2023)</span>
 <p>Percentage: 74.6%</p>
 </div>
+
 </section>
+
+<!-- ===== EXPERIENCE ===== -->
 <section id="experience">
 <h2>Experience</h2>
 
@@ -236,20 +332,21 @@ Integrated time tracking with date and notes.
 <h3>IT Intern – Bornfire Innovations Pvt Ltd</h3>
 <p>
 Worked on frontend development using HTML and CSS.
-Designed responsive web interfaces following modern UI/UX principles.
-Collaborated with development teams to improve usability and performance.
+Designed responsive UI and collaborated with development teams.
 </p>
 </div>
 
 <div class="card">
 <h3>Android Developer Intern – EduSkills</h3>
 <p>
-Completed 10-week virtual internship focused on Android application development.
-Built mobile applications using modern Android development tools.
+Completed 10-week virtual internship focused on Android application development
+and modern mobile tools.
 </p>
 </div>
 
 </section>
+
+<!-- ===== CONTACT ===== -->
 <section id="contact">
 <h2>Contact</h2>
 <p>Email: davisgavril292006@gmail.com</p>
@@ -261,7 +358,7 @@ Built mobile applications using modern Android development tools.
 </div>
 
 <footer>
-<p>© 2026 Davis Gavril T. All rights reserved.</p>
+<p>© 2026 Davis Gavril T. All Rights Reserved.</p>
 </footer>
 
 </body>
